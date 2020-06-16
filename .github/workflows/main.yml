@@ -1,0 +1,43 @@
+name: Deploy
+
+on: [push]
+
+jobs:
+  # test:
+  #   name: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     - name: yarn install
+  #       uses: borales/actions-yarn@v2.0.0
+  #       with:
+  #         cmd: install
+  #     - name: yarn test
+  #       uses: borales/actions-yarn@v2.0.0
+  #       with:
+  #         cmd: test
+  #       env:
+  #         AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    # needs: [test]
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: yarn install
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - name: yarn build
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build
+        env:
+          api_key: "token"
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_dir: ./dist

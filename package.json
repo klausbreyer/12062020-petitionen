@@ -1,0 +1,25 @@
+{
+  "name": "ideealisten-werte",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:klausbreyer/ideealisten-werte.git",
+  "author": "Klaus Breyer <kb@v01.io>",
+  "dependencies": {
+    "@material-ui/core": "^4.10.1",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.55",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "regenerator-runtime": "^0.13.5",
+    "typeface-source-sans-pro": "^1.1.5"
+  },
+  "scripts": {
+    "start": "parcel public/index.html --port 12620",
+    "build": "rm -rf dist && yarn parcel build public/index.html --public-url ./ && yarn parcel build src/index.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-react": "^7.10.1"
+  }
+}
