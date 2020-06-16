@@ -24,6 +24,7 @@ import {
   CardContent,
   StepLabel,
   Tooltip,
+  Link,
 } from "@material-ui/core";
 import {
   createMuiTheme,
@@ -34,6 +35,7 @@ import {
 import StarIcon from "@material-ui/icons/Star";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { useWindowSize } from "./lib/useWindowSize";
+import arrayShuffle from "./lib/arrayShuffle";
 
 const theme = createMuiTheme({
   typography: {
@@ -61,7 +63,10 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "8em",
   },
   categoryTypo: {
-    // minHeight: "8em",
+    lineHeight: "1.1em",
+    paddingLeft: "0.5em",
+    paddingTop: "0.5em",
+    fontWeight: "bold",
   },
   right: {
     textAlign: "right",
@@ -77,6 +82,9 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     // height: 450,
   },
+  gridTile: {
+    cursor: "pointer",
+  },
   icon: {
     color: "rgba(255, 255, 255, 0.54)",
   },
@@ -89,10 +97,15 @@ function App() {
 
   const category = config.categories[0];
 
-  const items = category.items
-    .concat(category.items)
-    .concat(category.items)
-    .concat(category.items);
+  let items = arrayShuffle(category.items);
+
+  items = items.sort(function (x, y) {
+    // true values first
+    return x.expert === y.expert ? 0 : x.expert ? -1 : 1;
+    // false values first
+    // return (x === y)? 0 : x? 1 : -1;
+  });
+
   return (
     <>
       <CssBaseline />
@@ -108,7 +121,7 @@ function App() {
             className={classes.categoryHeader}
           >
             <Grid item xs={6} sm={6}>
-              <Typography variant="h3" className={classes.categoryTypo}>
+              <Typography variant="h4" className={classes.categoryTypo}>
                 {category.name}
               </Typography>
             </Grid>
@@ -129,30 +142,37 @@ function App() {
               console.log(`we left ${active}, and are now at ${prev}`);
             }}
           >
-            {items.map((item, i) => (
-              <GridList
-                key={i}
-                cellHeight={360}
-                className={classes.gridList}
-                cols={1}
-              >
-                <GridListTile key={item.img}>
-                  <img src={item.image} alt={item.title} />
-                  <GridListTileBar
-                    title={item.name}
-                    subtitle={<span>{item.description}</span>}
-                    actionIcon={
-                      <Tooltip
-                        className={classes.icon}
-                        title="Von Expertinnen empfohlen."
-                      >
-                        <StarIcon />
-                      </Tooltip>
-                    }
-                  />
-                </GridListTile>
-              </GridList>
-            ))}
+            {items
+              .filter((item) => item.expert === true)
+              .map((item, i) => (
+                <GridList
+                  key={i}
+                  cellHeight={360}
+                  className={classes.gridList}
+                  cols={1}
+                >
+                  <GridListTile
+                    className={classes.gridTile}
+                    onClick={() => (window.location.href = item.url)}
+                  >
+                    <img src={item.image} alt={item.title} />
+                    <GridListTileBar
+                      title={item.name}
+                      subtitle={<span>{item.description}</span>}
+                      actionIcon={
+                        item.expert === false ? null : (
+                          <Tooltip
+                            className={classes.icon}
+                            title="Von Expertinnen empfohlen."
+                          >
+                            <StarIcon />
+                          </Tooltip>
+                        )
+                      }
+                    />
+                  </GridListTile>
+                </GridList>
+              ))}
           </Carousel>
 
           <div className={classes.gridRoot}>
@@ -162,18 +182,24 @@ function App() {
               cols={Math.floor(size.width / 320)}
             >
               {items.map((item, i) => (
-                <GridListTile key={i}>
+                <GridListTile
+                  key={i}
+                  className={classes.gridTile}
+                  onClick={() => (window.location.href = item.url)}
+                >
                   <img src={item.image} alt={item.title} />
                   <GridListTileBar
                     title={item.name}
                     subtitle={<span>{item.description}</span>}
                     actionIcon={
-                      <Tooltip
-                        className={classes.icon}
-                        title="Von Expertinnen empfohlen."
-                      >
-                        <StarIcon />
-                      </Tooltip>
+                      item.expert === false ? null : (
+                        <Tooltip
+                          className={classes.icon}
+                          title="Von Expertinnen empfohlen."
+                        >
+                          <StarIcon />
+                        </Tooltip>
+                      )
                     }
                   />
                 </GridListTile>
