@@ -15,9 +15,15 @@ import {
   Grow,
   Stepper,
   Step,
+  GridList,
+  GridListTile,
+  GridListTileBar,
+  IconButton,
   Grid,
   Paper,
+  CardContent,
   StepLabel,
+  Tooltip,
 } from "@material-ui/core";
 import {
   createMuiTheme,
@@ -25,7 +31,9 @@ import {
   makeStyles,
 } from "@material-ui/core/styles";
 
+import StarIcon from "@material-ui/icons/Star";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { useWindowSize } from "./lib/useWindowSize";
 
 const theme = createMuiTheme({
   typography: {
@@ -58,24 +66,33 @@ const useStyles = makeStyles((theme) => ({
   right: {
     textAlign: "right",
   },
+  gridRoot: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    overflow: "hidden",
+    // backgroundColor: theme.palette.background.paper,
+  },
+  gridList: {
+    width: "100%",
+    // height: 450,
+  },
+  icon: {
+    color: "rgba(255, 255, 255, 0.54)",
+  },
 }));
 
 function App() {
-  const [data, setData] = useState([
-    {
-      id: "reczWgV1IbewGOrLA",
-      name: "Gerechtigkeit",
-    },
-    {
-      id: "recgKBx7ybF2nzTOD",
-      name: "Zuverlässigkeit",
-    },
-  ]);
+  const size = useWindowSize();
 
   const classes = useStyles();
 
-  const category = config.categories.pop();
-  const items = category.items;
+  const category = config.categories[0];
+
+  const items = category.items
+    .concat(category.items)
+    .concat(category.items)
+    .concat(category.items);
   return (
     <>
       <CssBaseline />
@@ -102,7 +119,7 @@ function App() {
           <Carousel
             autoPlay={true}
             indicators={true}
-            animation={"slide"}
+            animation={"fade"}
             navButtonsAlwaysVisible={true}
             fullHeightHover={true}
             next={(next, active) => {
@@ -112,10 +129,57 @@ function App() {
               console.log(`we left ${active}, and are now at ${prev}`);
             }}
           >
-            {items.map((item) => (
-              <Item item={item} />
+            {items.map((item, i) => (
+              <GridList
+                key={i}
+                cellHeight={360}
+                className={classes.gridList}
+                cols={1}
+              >
+                <GridListTile key={item.img}>
+                  <img src={item.image} alt={item.title} />
+                  <GridListTileBar
+                    title={item.name}
+                    subtitle={<span>{item.description}</span>}
+                    actionIcon={
+                      <Tooltip
+                        className={classes.icon}
+                        title="Von Expertinnen empfohlen."
+                      >
+                        <StarIcon />
+                      </Tooltip>
+                    }
+                  />
+                </GridListTile>
+              </GridList>
             ))}
           </Carousel>
+
+          <div className={classes.gridRoot}>
+            <GridList
+              cellHeight={180}
+              className={classes.gridList}
+              cols={Math.floor(size.width / 320)}
+            >
+              {items.map((item, i) => (
+                <GridListTile key={i}>
+                  <img src={item.image} alt={item.title} />
+                  <GridListTileBar
+                    title={item.name}
+                    subtitle={<span>{item.description}</span>}
+                    actionIcon={
+                      <Tooltip
+                        className={classes.icon}
+                        title="Von Expertinnen empfohlen."
+                      >
+                        <StarIcon />
+                      </Tooltip>
+                    }
+                  />
+                </GridListTile>
+              ))}
+            </GridList>
+          </div>
         </Box>
       </ThemeProvider>
     </>
