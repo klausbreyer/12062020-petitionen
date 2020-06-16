@@ -5,11 +5,12 @@ import React, { useState, useEffect, useMemo } from "react";
 import ReactDOM from "react-dom";
 
 import config from "./config";
-
+import Carousel from "react-material-ui-carousel";
 import {
   Box,
   Typography,
   LinearProgress,
+  Button,
   Divider,
   Grow,
   Stepper,
@@ -74,6 +75,7 @@ function App() {
   const classes = useStyles();
 
   const category = config.categories.pop();
+  const items = category.items;
   return (
     <>
       <CssBaseline />
@@ -97,9 +99,37 @@ function App() {
               <img src={category.image} className={classes.categoryImage} />
             </Grid>
           </Grid>
+          <Carousel
+            autoPlay={true}
+            indicators={true}
+            animation={"slide"}
+            navButtonsAlwaysVisible={true}
+            fullHeightHover={true}
+            next={(next, active) => {
+              console.log(`we left ${active}, and are now at ${next}`);
+            }}
+            prev={(prev, active) => {
+              console.log(`we left ${active}, and are now at ${prev}`);
+            }}
+          >
+            {items.map((item) => (
+              <Item item={item} />
+            ))}
+          </Carousel>
         </Box>
       </ThemeProvider>
     </>
   );
 }
 ReactDOM.render(<App />, document.getElementById("root"));
+
+function Item(props) {
+  return (
+    <Paper>
+      <h2>{props.item.name}</h2>
+      <p>{props.item.description}</p>
+
+      <Button className="CheckButton">Check it out!</Button>
+    </Paper>
+  );
+}
