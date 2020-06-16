@@ -4,6 +4,8 @@ import "typeface-source-sans-pro";
 import React, { useState, useEffect, useMemo } from "react";
 import ReactDOM from "react-dom";
 
+import config from "./config";
+
 import {
   Box,
   Typography,
@@ -12,6 +14,7 @@ import {
   Grow,
   Stepper,
   Step,
+  Grid,
   Paper,
   StepLabel,
 } from "@material-ui/core";
@@ -40,6 +43,20 @@ const useStyles = makeStyles((theme) => ({
   fakeHeader: {
     width: "100%",
   },
+  categoryImage: {
+    // float: "right",
+    maxWidth: "100%",
+    maxHeight: "8em",
+  },
+  categoryHeader: {
+    minHeight: "8em",
+  },
+  categoryTypo: {
+    // minHeight: "8em",
+  },
+  right: {
+    textAlign: "right",
+  },
 }));
 
 function App() {
@@ -56,6 +73,7 @@ function App() {
 
   const classes = useStyles();
 
+  const category = config.categories.pop();
   return (
     <>
       <CssBaseline />
@@ -65,6 +83,20 @@ function App() {
             src={require("../images/fake-header.png")}
             className={classes.fakeHeader}
           />
+          <Grid
+            container
+            style={{ backgroundColor: category.color }}
+            className={classes.categoryHeader}
+          >
+            <Grid item xs={6} sm={6}>
+              <Typography variant="h3" className={classes.categoryTypo}>
+                {category.name}
+              </Typography>
+            </Grid>
+            <Grid item xs={6} sm={6} className={classes.right}>
+              <img src={category.image} className={classes.categoryImage} />
+            </Grid>
+          </Grid>
         </Box>
       </ThemeProvider>
     </>
