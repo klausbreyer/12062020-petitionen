@@ -1,33 +1,20 @@
 import "regenerator-runtime/runtime";
 import "typeface-source-sans-pro";
 
-import { tsv } from "csv";
-
-import React, { useState, useEffect, useMemo } from "react";
+import React from "react";
+// import React, { useState, useEffect, useMemo } from "react";
 import ReactDOM from "react-dom";
 
 import config from "./config";
-import Carousel from "react-material-ui-carousel";
-import {
-  Box,
-  Typography,
-  LinearProgress,
-  Button,
-  Divider,
-  Grow,
-  d,
-  Step,
-  GridList,
-  GridListTile,
-  GridListTileBar,
-  IconButton,
-  Grid,
-  Paper,
-  CardContent,
-  StepLabel,
-  Tooltip,
-  Link,
-} from "@material-ui/core";
+// import Carousel from "react-material-ui-carousel";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import GridList from "@material-ui/core/GridList";
+import GridListTile from "@material-ui/core/GridListTile";
+import GridListTileBar from "@material-ui/core/GridListTileBar";
+import Grid from "@material-ui/core/Grid";
+
 import {
   createMuiTheme,
   ThemeProvider,
@@ -38,7 +25,6 @@ const expertinnenIcon = require("../images/expertinnen.png");
 const petitionImages = require("../images/petitions/*.jpg");
 const categoryImages = require("../images/petitions/*.svg");
 
-import StarIcon from "@material-ui/icons/Star";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { useWindowSize } from "./lib/useWindowSize";
 import arrayShuffle from "./lib/arrayShuffle";
@@ -168,21 +154,15 @@ function parseTsv(string) {
 }
 
 const expertinnenParsed = parseTsv(expertinnenString);
-console.log(expertinnenParsed);
 const consulParsed = parseTsv(consulString);
-console.log(consulParsed);
 
 const expertinnenIds = expertinnenParsed.map((line) => line[0]);
-console.log(expertinnenIds);
-const consulWithoutExpertinnenParsed = consulParsed.filter(
-  (line) => expertinnenIds.indexOf(line[0]) === -1
+const consulWithoutExpertinnenParsed = arrayShuffle(
+  consulParsed.filter((line) => expertinnenIds.indexOf(line[0]) === -1)
 );
-
-console.log(consulWithoutExpertinnenParsed);
 
 function App() {
   const size = useWindowSize();
-
   const classes = useStyles();
 
   return (
@@ -194,12 +174,9 @@ function App() {
             const expertinnen = expertinnenParsed.filter(
               (line) => line[1] === category.name
             );
-            const consuls = arrayShuffle(
-              consulWithoutExpertinnenParsed.filter(
-                (line) => line[1] === category.filter
-              )
-            ).splice(0, 8);
-            console.log(expertinnen);
+            const consuls = consulWithoutExpertinnenParsed
+              .filter((line) => line[1] === category.filter)
+              .splice(0, 8);
 
             return (
               <Box key={category}>
@@ -265,7 +242,7 @@ function App() {
                             className={classes.expertinnenIcon}
                           />
 
-                          <img src={image} />
+                          <img src={image} title={item[7]} />
                           <GridListTileBar
                             classes={{
                               title: classes.gridListTileBar,
@@ -334,10 +311,8 @@ function App() {
             navButtonsAlwaysVisible={true}
             fullHeightHover={true}
             next={(next, active) => {
-              console.log(`we left ${active}, and are now at ${next}`);
             }}
             prev={(prev, active) => {
-              console.log(`we left ${active}, and are now at ${prev}`);
             }}
           >
             {items
