@@ -153,6 +153,11 @@ const useStyles = makeStyles((theme) => ({
     left: "inherit",
     transform: "none",
   },
+  andereExplanation: {
+    maxWidth: 768,
+    margin: "auto",
+    padding: "4em",
+  },
 }));
 
 import expertinnenString from "../data/import_expertinnen.tsv.js";
@@ -221,6 +226,20 @@ function App() {
                   >
                     Empfohlen von Expert*innen
                   </Typography>
+                )}
+                {category.short === "andere" && (
+                  <div className={classes.andereExplanation}>
+                    <Typography variant="h4">
+                      Warum gibt es die Wildcards?
+                    </Typography>
+                    <Typography>
+                      Das ist ein Erklärunghstext warum es die Kategorie
+                      Wildcards gibt und warum diese Petitionen nicht von den
+                      Expert’innen empfohlen wurden. Gruende warum es die
+                      Kategorie Wildcards gibt und warum diese Petitionen nicht
+                      von den Expert’innen empfohlen wurden.
+                    </Typography>
+                  </div>
                 )}
 
                 <div className={classes.gridRoot}>
