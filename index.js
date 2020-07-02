@@ -111,15 +111,15 @@ module.exports={generate:require("csv-generate/lib"),parse:require("csv-parse/li
 },{"react":"n8MK","object-assign":"J4Nk","scheduler":"MDSO"}],"NKHc":[function(require,module,exports) {
 "use strict";function _(){if("undefined"!=typeof __REACT_DEVTOOLS_GLOBAL_HOOK__&&"function"==typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE){0;try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(_)}catch(O){console.error(O)}}}_(),module.exports=require("./cjs/react-dom.production.min.js");
 },{"./cjs/react-dom.production.min.js":"i17t"}],"xu96":[function(require,module,exports) {
-module.exports="klima.051c0c32.svg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/klima.051c0c32.svg";
 },{}],"Vep3":[function(require,module,exports) {
-module.exports="demo.6d8e2ca8.svg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/demo.6d8e2ca8.svg";
 },{}],"HMUD":[function(require,module,exports) {
-module.exports="sozial.34746dda.svg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/sozial.34746dda.svg";
 },{}],"sPN6":[function(require,module,exports) {
-module.exports="corona.1f15d59a.svg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/corona.1f15d59a.svg";
 },{}],"A0SP":[function(require,module,exports) {
-module.exports="andere.a959ee78.svg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/andere.a959ee78.svg";
 },{}],"BDLb":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e={categories:[{image:require("../images/header/klima.svg"),name:"Klima und Biodiversität",filter:"Klima und Biodiversität",short:"klima",color:"#BCCE16",link:"https://petitionen.12062020.de/budgets/1/investments?heading_id=1"},{image:require("../images/header/demo.svg"),name:"Demokratie",filter:"Demokratie",short:"demo",color:"#8DD0F1",link:"https://petitionen.12062020.de/budgets/1/investments?heading_id=6"},{image:require("../images/header/sozial.svg"),name:"Soziale Gerechtigkeit",filter:"Soziale Gerechtigkeit",short:"sozial",color:"#F3B8D3",link:"https://petitionen.12062020.de/budgets/1/investments?heading_id=5"},{image:require("../images/header/corona.svg"),name:"Zeit nach Corona",filter:"Zeit nach Corona",short:"corona",color:"#FBC11D",link:"https://petitionen.12062020.de/budgets/1/investments?heading_id=8"},{image:require("../images/header/andere.svg"),name:"Wildcards",filter:"Andere",short:"andere",color:"#F2910F",link:"https://petitionen.12062020.de/budgets/1/investments?heading_id=7"}]};exports.default=e;
 },{"../images/header/klima.svg":"xu96","../images/header/demo.svg":"Vep3","../images/header/sozial.svg":"HMUD","../images/header/corona.svg":"sPN6","../images/header/andere.svg":"A0SP"}],"DyYm":[function(require,module,exports) {
@@ -1055,67 +1055,67 @@ function r(){return module.exports=r=Object.assign||function(r){for(var t=1;t<ar
 },{"react":"n8MK","@material-ui/core":"dT3j","@material-ui/core/styles":"UUDD","auto-bind":"eJAR","@material-ui/icons/FiberManualRecord":"hGXr","@material-ui/icons/NavigateBefore":"MDbB","@material-ui/icons/NavigateNext":"C1BB","react-swipeable":"Fr74"}],"BDII":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./components/Carousel"),t=r(e);function r(e){return e&&e.__esModule?e:{default:e}}exports.default=t.default;
 },{"./components/Carousel":"maMm"}],"qY30":[function(require,module,exports) {
-module.exports="expertinnen.d40ced99.png";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/expertinnen.d40ced99.png";
 },{}],"KW7z":[function(require,module,exports) {
-module.exports="104.47f5282c.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/104.47f5282c.jpg";
 },{}],"sUHS":[function(require,module,exports) {
-module.exports="166.32fa1b24.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/166.32fa1b24.jpg";
 },{}],"zwdo":[function(require,module,exports) {
-module.exports="172.991a78d8.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/172.991a78d8.jpg";
 },{}],"Vaio":[function(require,module,exports) {
-module.exports="174.ae63ed5a.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/174.ae63ed5a.jpg";
 },{}],"oah1":[function(require,module,exports) {
-module.exports="177.9af6eff8.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/177.9af6eff8.jpg";
 },{}],"vY3o":[function(require,module,exports) {
-module.exports="185.aa344beb.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/185.aa344beb.jpg";
 },{}],"WrhL":[function(require,module,exports) {
-module.exports="240.7f549bc1.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/240.7f549bc1.jpg";
 },{}],"cnN6":[function(require,module,exports) {
-module.exports="27.2c24dbf9.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/27.2c24dbf9.jpg";
 },{}],"rLv0":[function(require,module,exports) {
-module.exports="28.c5fdb1c6.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/28.c5fdb1c6.jpg";
 },{}],"IBSM":[function(require,module,exports) {
-module.exports="299.b2d35e25.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/299.b2d35e25.jpg";
 },{}],"P4NY":[function(require,module,exports) {
-module.exports="302.4c075b6c.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/302.4c075b6c.jpg";
 },{}],"ycFy":[function(require,module,exports) {
-module.exports="306.d8f7f39b.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/306.d8f7f39b.jpg";
 },{}],"Kj3X":[function(require,module,exports) {
-module.exports="307.4f9f24ba.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/307.4f9f24ba.jpg";
 },{}],"ugpw":[function(require,module,exports) {
-module.exports="314.ba9a1dbd.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/314.ba9a1dbd.jpg";
 },{}],"SY3Y":[function(require,module,exports) {
-module.exports="319.3f7e6b53.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/319.3f7e6b53.jpg";
 },{}],"z3rF":[function(require,module,exports) {
-module.exports="342.d9f6b87f.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/342.d9f6b87f.jpg";
 },{}],"GoDW":[function(require,module,exports) {
-module.exports="345.b6289db3.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/345.b6289db3.jpg";
 },{}],"AC0D":[function(require,module,exports) {
-module.exports="346.8c5c7a09.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/346.8c5c7a09.jpg";
 },{}],"qSeg":[function(require,module,exports) {
-module.exports="71.82c9a0f1.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/71.82c9a0f1.jpg";
 },{}],"cNRE":[function(require,module,exports) {
-module.exports="77.6d759553.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/77.6d759553.jpg";
 },{}],"xmHt":[function(require,module,exports) {
-module.exports="Artboard Copy 20.8d1c4eeb.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/Artboard Copy 20.8d1c4eeb.jpg";
 },{}],"HHHZ":[function(require,module,exports) {
-module.exports="Artboard Copy 21.8d1c4eeb.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/Artboard Copy 21.8d1c4eeb.jpg";
 },{}],"piND":[function(require,module,exports) {
-module.exports="dx.8d1c4eeb.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/dx.8d1c4eeb.jpg";
 },{}],"mQDP":[function(require,module,exports) {
 module.exports={27:require("./27.jpg"),28:require("./28.jpg"),71:require("./71.jpg"),77:require("./77.jpg"),104:require("./104.jpg"),166:require("./166.jpg"),172:require("./172.jpg"),174:require("./174.jpg"),177:require("./177.jpg"),185:require("./185.jpg"),240:require("./240.jpg"),299:require("./299.jpg"),302:require("./302.jpg"),306:require("./306.jpg"),307:require("./307.jpg"),314:require("./314.jpg"),319:require("./319.jpg"),342:require("./342.jpg"),345:require("./345.jpg"),346:require("./346.jpg"),"Artboard Copy 20":require("./Artboard Copy 20.jpg"),"Artboard Copy 21":require("./Artboard Copy 21.jpg"),dx:require("./dx.jpg")};
 },{"./104.jpg":"KW7z","./166.jpg":"sUHS","./172.jpg":"zwdo","./174.jpg":"Vaio","./177.jpg":"oah1","./185.jpg":"vY3o","./240.jpg":"WrhL","./27.jpg":"cnN6","./28.jpg":"rLv0","./299.jpg":"IBSM","./302.jpg":"P4NY","./306.jpg":"ycFy","./307.jpg":"Kj3X","./314.jpg":"ugpw","./319.jpg":"SY3Y","./342.jpg":"z3rF","./345.jpg":"GoDW","./346.jpg":"AC0D","./71.jpg":"qSeg","./77.jpg":"cNRE","./Artboard Copy 20.jpg":"xmHt","./Artboard Copy 21.jpg":"HHHZ","./dx.jpg":"piND"}],"htPf":[function(require,module,exports) {
-module.exports="andere.066d7b1e.svg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/andere.066d7b1e.svg";
 },{}],"g9sS":[function(require,module,exports) {
-module.exports="consulbar.228ab899.svg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/consulbar.228ab899.svg";
 },{}],"BdM9":[function(require,module,exports) {
-module.exports="corona.d394496c.svg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/corona.d394496c.svg";
 },{}],"bloe":[function(require,module,exports) {
-module.exports="demo.e28208ae.svg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/demo.e28208ae.svg";
 },{}],"OnDp":[function(require,module,exports) {
-module.exports="klima.37852da8.svg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/klima.37852da8.svg";
 },{}],"ngus":[function(require,module,exports) {
-module.exports="sozial.0386463f.svg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/sozial.0386463f.svg";
 },{}],"GqY5":[function(require,module,exports) {
 module.exports={andere:require("./andere.svg"),consulbar:require("./consulbar.svg"),corona:require("./corona.svg"),demo:require("./demo.svg"),klima:require("./klima.svg"),sozial:require("./sozial.svg")};
 },{"./andere.svg":"htPf","./consulbar.svg":"g9sS","./corona.svg":"BdM9","./demo.svg":"bloe","./klima.svg":"OnDp","./sozial.svg":"ngus"}],"aoA7":[function(require,module,exports) {
@@ -1131,4 +1131,4 @@ module.exports={andere:require("./andere.svg"),consulbar:require("./consulbar.sv
 },{}],"uBxZ":[function(require,module,exports) {
 "use strict";require("regenerator-runtime/runtime"),require("typeface-source-sans-pro");var e=require("csv"),t=p(require("react")),r=g(require("react-dom")),a=g(require("./config")),i=g(require("react-material-ui-carousel")),n=require("@material-ui/core"),l=require("@material-ui/core/styles"),o=g(require("@material-ui/icons/Star")),c=g(require("@material-ui/core/CssBaseline")),u=require("./lib/useWindowSize"),d=g(require("./lib/arrayShuffle")),s=g(require("../data/import_expertinnen.tsv.js")),m=g(require("../data/import_consul.tsv.js"));function g(e){return e&&e.__esModule?e:{default:e}}function f(){if("function"!=typeof WeakMap)return null;var e=new WeakMap;return f=function(){return e},e}function p(e){if(e&&e.__esModule)return e;if(null===e||"object"!=typeof e&&"function"!=typeof e)return{default:e};var t=f();if(t&&t.has(e))return t.get(e);var r={},a=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var i in e)if(Object.prototype.hasOwnProperty.call(e,i)){var n=a?Object.getOwnPropertyDescriptor(e,i):null;n&&(n.get||n.set)?Object.defineProperty(r,i,n):r[i]=e[i]}return r.default=e,t&&t.set(e,r),r}var h=require("../images/expertinnen.png"),y=require("../images/petitions/*.jpg"),E=require("../images/petitions/*.svg"),v=(0,l.createMuiTheme)({typography:{fontFamily:["Source Sans Pro","Helvetica","Arial","sans-serif"]},palette:{primary:{main:"#000"},secondary:{main:"#f3ebe7"},type:"light"}}),b=(0,l.makeStyles)(function(e){return{root:{margin:"auto",padding:"0 1em 5em 1em",maxWidth:"1280px"},d:{background:"none"},categoryImage:{maxWidth:"100%",maxHeight:"8em"},categoryHeader:{margin:7.5,width:"calc(100% - 15px)",minHeight:"8em"},categoryTypo:{lineHeight:"1.1em",paddingLeft:"0.5em",paddingTop:"0.5em",paddingBottom:"0.5em",fontWeight:"bold"},right:{textAlign:"right",height:"8em"},gridRoot:{display:"flex",flexWrap:"wrap",justifyContent:"space-around",overflow:"hidden"},gridList:{width:"100%"},gridTile:{cursor:"pointer"},klima:{},gridImageConsul:{position:"static",transform:"none"},consulTileBar:{color:"black",fontWeight:"bold",display:"block",padding:3,fontSize:18,height:86,whiteSpace:"normal",background:"none",margin:0},gridListTileBar:{backgroundColor:"#fefefe",color:"black",fontWeight:"bold",display:"block",padding:0,whiteSpace:"normal",margin:0},icon:{color:"rgba(255, 255, 255, 0.54)"},expertinnenHeader:{fontWeight:"bold",margin:7.5,padding:3,paddingLeft:40,backgroundImage:"url(".concat(h,")"),backgroundRepeat:"no-repeat",backgroundSize:"contain"},consulHeader:{fontWeight:"bold",margin:7.5,padding:3},moreButtonArea:{textAlign:"right",margin:7.5,marginBottom:"8em"},moreButton:{fontWeight:"bold"},expertinnenIcon:{position:"absolute",top:10,right:10,width:40,height:40,left:"inherit",transform:"none"},andereExplanation:{maxWidth:768,margin:"auto",padding:"4em"}}});function x(e){return e.split("\n").map(function(e){return e.split("\t")})}var w=x(s.default);console.log(w);var T=x(m.default);console.log(T);var k=w.map(function(e){return e[0]});console.log(k);var B=T.filter(function(e){return-1===k.indexOf(e[0])});function W(){var e=(0,u.useWindowSize)(),r=b();return t.default.createElement(t.default.Fragment,null,t.default.createElement(c.default,null),t.default.createElement(l.ThemeProvider,{theme:v},t.default.createElement(n.Box,{color:"text.primary",className:r.root},a.default.categories.map(function(a){var i=w.filter(function(e){return e[1]===a.name}),l=(0,d.default)(B.filter(function(e){return e[1]===a.filter})).splice(0,8);return console.log(i),t.default.createElement(n.Box,{key:a},t.default.createElement(n.Grid,{container:!0,style:{backgroundColor:a.color},className:r.categoryHeader},t.default.createElement(n.Grid,{item:!0,xs:12,sm:6},t.default.createElement(n.Typography,{variant:"h4",className:r.categoryTypo},a.name)),t.default.createElement(n.Grid,{item:!0,xs:12,sm:6,className:r.right},t.default.createElement("img",{src:a.image,className:r.categoryImage}))),"andere"!==a.short&&t.default.createElement(n.Typography,{variant:"h6",className:r.expertinnenHeader},"Empfohlen von Expert*innen"),"andere"===a.short&&t.default.createElement("div",{className:r.andereExplanation},t.default.createElement(n.Typography,{variant:"h4"},"Warum gibt es die Wildcards?"),t.default.createElement(n.Typography,null,"Das ist ein Erklärunghstext warum es die Kategorie Wildcards gibt und warum diese Petitionen nicht von den Expert’innen empfohlen wurden. Gruende warum es die Kategorie Wildcards gibt und warum diese Petitionen nicht von den Expert’innen empfohlen wurden.")),t.default.createElement("div",{className:r.gridRoot},t.default.createElement(n.GridList,{cellHeight:350,className:r.gridList,cols:Math.floor(Math.min(e.width,1280)/300),spacing:15},i.map(function(e,a){var i=y[e[0]];return t.default.createElement(n.GridListTile,{key:a,className:r.gridTile,onClick:function(){return window.location.href="https://petitionen.12062020.de/budgets/1/investments/".concat(e[0])}},t.default.createElement("img",{src:i}),t.default.createElement("img",{src:h,className:r.expertinnenIcon}),t.default.createElement(n.GridListTileBar,{classes:{title:r.gridListTileBar,titleWrap:r.gridListTileBar},className:r.gridListTileBar,title:e[5]}))}))),t.default.createElement(n.Typography,{variant:"h6",className:r.consulHeader},"Noch Mehr Petitionen"),t.default.createElement("div",{className:r.gridRoot},t.default.createElement(n.GridList,{cellHeight:100,className:r.gridList,cols:Math.floor(Math.min(e.width,1280)/300),spacing:15},l.map(function(e,i){y[e[0]];return t.default.createElement(n.GridListTile,{key:i,classes:{imgFullWidth:r.gridImageConsul,imgFullHeight:r.gridImageConsul},className:r.gridTile,onClick:function(){return window.location.href="https://petitionen.12062020.de/budgets/1/investments/".concat(e[0])}},t.default.createElement("img",{src:E[a.short]}),t.default.createElement(n.GridListTileBar,{classes:{title:r.consulTileBar,titleWrap:r.consulTileBar},className:r.consulTileBar,title:e[5]}))}))),t.default.createElement("div",{className:r.moreButtonArea},t.default.createElement(n.Button,{variant:"outlined",className:r.moreButton},"Zur ",a.name," Petitionsübersicht")))}))))}console.log(B),r.default.render(t.default.createElement(W,null),document.getElementById("root"));
 },{"regenerator-runtime/runtime":"QVnC","typeface-source-sans-pro":"EgmX","csv":"BKqy","react":"n8MK","react-dom":"NKHc","./config":"BDLb","react-material-ui-carousel":"BDII","@material-ui/core":"dT3j","@material-ui/core/styles":"UUDD","../images/expertinnen.png":"qY30","../images/petitions/*.jpg":"mQDP","../images/petitions/*.svg":"GqY5","@material-ui/icons/Star":"aoA7","@material-ui/core/CssBaseline":"cmOJ","./lib/useWindowSize":"h8TT","./lib/arrayShuffle":"CF0B","../data/import_expertinnen.tsv.js":"bCRi","../data/import_consul.tsv.js":"VCBM"}]},{},["uBxZ"], null)
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=https://klausbreyer.github.io/12062020-petitionen/index.js.map
