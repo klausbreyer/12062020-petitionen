@@ -15,7 +15,7 @@ import {
   Button,
   Divider,
   Grow,
-  Stepper,
+  d,
   Step,
   GridList,
   GridListTile,
@@ -39,17 +39,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { useWindowSize } from "./lib/useWindowSize";
 import arrayShuffle from "./lib/arrayShuffle";
 
-import expertinnenString from "../import_expertinnen.tsv.js";
-import consulString from "../import_consul.tsv.js";
-function parseTsv(string) {
-  return string.split("\n").map((line) => line.split("\t"));
-}
-
-const expertinnen = parseTsv(expertinnenString);
-console.log(expertinnen);
-const consul = parseTsv(consulString);
-console.log(consul);
-
 const theme = createMuiTheme({
   typography: {
     fontFamily: ["Source Sans Pro", "Helvetica", "Arial", "sans-serif"],
@@ -63,16 +52,16 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: { margin: "auto", padding: "0 1em 5em 1em", maxWidth: "1280px" },
-  stepper: { background: "none" },
-  fakeHeader: {
-    width: "100%",
-  },
+  d: { background: "none" },
+
   categoryImage: {
     // float: "right",
     maxWidth: "100%",
     maxHeight: "8em",
   },
   categoryHeader: {
+    margin: 7.5,
+    width: "calc(100% - 15px)",
     minHeight: "8em",
   },
   categoryTypo: {
@@ -98,51 +87,134 @@ const useStyles = makeStyles((theme) => ({
   gridTile: {
     cursor: "pointer",
   },
+  gridListTileBar: {
+    backgroundColor: "#fefefe",
+    color: "black",
+    fontWeight: "bold",
+    display: "block",
+    padding: 0,
+    whiteSpace: "normal",
+    margin: 0,
+  },
   icon: {
     color: "rgba(255, 255, 255, 0.54)",
   },
+  expertinnenHeader: {
+    fontWeight: "bold",
+    margin: 7.5,
+    padding: 3,
+    paddingLeft: 40,
+    backgroundImage: `url(${require("../images/expertinnen.png")})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "contain",
+  },
+  consulHeader: {
+    fontWeight: "bold",
+    margin: 7.5,
+    padding: 3,
+  },
 }));
+
+import expertinnenString from "../data/import_expertinnen.tsv.js";
+import consulString from "../data/import_consul.tsv.js";
+function parseTsv(string) {
+  return string.split("\n").map((line) => line.split("\t"));
+}
+
+const petitionImages = require("../images/petitions/*.jpg");
+console.log(petitionImages);
+
+const expertinnenParsed = parseTsv(expertinnenString);
+console.log(expertinnenParsed);
+const consulParsed = parseTsv(consulString);
+console.log(consulParsed);
+
+const expertinnenIds = expertinnenParsed.map((line) => line[0]);
+console.log(expertinnenIds);
+const consulWithoutExpertinnen = consulParsed.filter(
+  (line) => expertinnenIds.indexOf(line[0]) === -1
+);
+
+console.log(consulWithoutExpertinnen);
 
 function App() {
   const size = useWindowSize();
 
   const classes = useStyles();
 
-  const category = config.categories[0];
-
-  let items = arrayShuffle(category.items);
-
-  items = items.sort(function (x, y) {
-    // true values first
-    return x.expert === y.expert ? 0 : x.expert ? -1 : 1;
-    // false values first
-    // return (x === y)? 0 : x? 1 : -1;
-  });
-
   return (
     <>
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <Box color="text.primary" className={classes.root}>
-          <img
-            src={require("../images/fake-header.png")}
-            className={classes.fakeHeader}
-          />
-          <Grid
-            container
-            style={{ backgroundColor: category.color }}
-            className={classes.categoryHeader}
-          >
-            <Grid item xs={6} sm={6}>
-              <Typography variant="h4" className={classes.categoryTypo}>
-                {category.name}
-              </Typography>
-            </Grid>
-            <Grid item xs={6} sm={6} className={classes.right}>
-              <img src={category.image} className={classes.categoryImage} />
-            </Grid>
-          </Grid>
-          <Carousel
+          {config.categories.map((category) => {
+            const expertinnen = expertinnenParsed.filter(
+              (line) => line[1] === category.name
+            );
+            console.log(expertinnen);
+
+            return (
+              <Box key={category}>
+                <Grid
+                  container
+                  style={{ backgroundColor: category.color }}
+                  className={classes.categoryHeader}
+                >
+                  <Grid item xs={6} sm={6}>
+                    <Typography variant="h4" className={classes.categoryTypo}>
+                      {category.name}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={6} sm={6} className={classes.right}>
+                    <img
+                      src={category.image}
+                      className={classes.categoryImage}
+                    />
+                  </Grid>
+                </Grid>
+                <Typography variant="h6" className={classes.expertinnenHeader}>
+                  Empfohlen von Expert*innen
+                </Typography>
+                <div className={classes.gridRoot}>
+                  <GridList
+                    cellHeight={350}
+                    className={classes.gridList}
+                    cols={Math.floor(Math.min(size.width, 1280) / 300)}
+                    spacing={15}
+                  >
+                    {expertinnen.map((item, i) => {
+                      const image = petitionImages[item[0]];
+                      return (
+                        <GridListTile
+                          key={i}
+                          className={classes.gridTile}
+                          onClick={() =>
+                            (window.location.href = `https://petitionen.12062020.de/budgets/1/investments/${item[0]}`)
+                          }
+                        >
+                          <img src={image} />
+
+                          <GridListTileBar
+                            classes={{
+                              title: classes.gridListTileBar,
+                              titleWrap: classes.gridListTileBar,
+                            }}
+                            className={classes.gridListTileBar}
+                            title={item[5]}
+                          />
+                        </GridListTile>
+                      );
+                    })}
+                  </GridList>
+                </div>
+                <Typography variant="h6" className={classes.consulHeader}>
+                  Noch Mehr Petitionen
+                </Typography>
+              </Box>
+            );
+          })}
+
+          {/* <Carousel
             autoPlay={true}
             indicators={true}
             animation={"fade"}
@@ -191,7 +263,7 @@ function App() {
           <div className={classes.gridRoot}>
             <GridList
               cellHeight={180}
-              className={classes.gridList}
+              lassName={classes.gridList}
               cols={Math.floor(size.width / 320)}
             >
               {items.map((item, i) => (
@@ -218,7 +290,7 @@ function App() {
                 </GridListTile>
               ))}
             </GridList>
-          </div>
+          </div>*/}
         </Box>
       </ThemeProvider>
     </>
@@ -226,13 +298,13 @@ function App() {
 }
 ReactDOM.render(<App />, document.getElementById("root"));
 
-function Item(props) {
-  return (
-    <Paper>
-      <h2>{props.item.name}</h2>
-      <p>{props.item.description}</p>
+// function Item(props) {
+//   return (
+//     <Paper>
+//       <h2>{props.item.name}</h2>
+//       <p>{props.item.description}</p>
 
-      <Button className="CheckButton">Check it out!</Button>
-    </Paper>
-  );
-}
+//       <Button className="CheckButton">Check it out!</Button>
+//     </Paper>
+//   );
+// }
