@@ -55,7 +55,6 @@ const useStyles = makeStyles((theme) => ({
   d: { background: "none" },
 
   categoryImage: {
-    // float: "right",
     maxWidth: "100%",
     maxHeight: "8em",
   },
@@ -68,10 +67,12 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "1.1em",
     paddingLeft: "0.5em",
     paddingTop: "0.5em",
+    paddingBottom: "0.5em",
     fontWeight: "bold",
   },
   right: {
     textAlign: "right",
+    height: "8em",
   },
   gridRoot: {
     display: "flex",
@@ -136,6 +137,7 @@ const useStyles = makeStyles((theme) => ({
   moreButtonArea: {
     textAlign: "right",
     margin: 7.5,
+    marginBottom: "8em",
   },
   moreButton: { fontWeight: "bold" },
 }));
@@ -180,7 +182,7 @@ function App() {
             );
             const consuls = arrayShuffle(
               consulWithoutExpertinnenParsed.filter(
-                (line) => line[1] === category.name
+                (line) => line[1] === category.filter
               )
             ).splice(0, 8);
             console.log(expertinnen);
@@ -192,21 +194,27 @@ function App() {
                   style={{ backgroundColor: category.color }}
                   className={classes.categoryHeader}
                 >
-                  <Grid item xs={6} sm={6}>
+                  <Grid item xs={12} sm={6}>
                     <Typography variant="h4" className={classes.categoryTypo}>
                       {category.name}
                     </Typography>
                   </Grid>
-                  <Grid item xs={6} sm={6} className={classes.right}>
+                  <Grid item xs={12} sm={6} className={classes.right}>
                     <img
                       src={category.image}
                       className={classes.categoryImage}
                     />
                   </Grid>
                 </Grid>
-                <Typography variant="h6" className={classes.expertinnenHeader}>
-                  Empfohlen von Expert*innen
-                </Typography>
+                {category.short !== "andere" && (
+                  <Typography
+                    variant="h6"
+                    className={classes.expertinnenHeader}
+                  >
+                    Empfohlen von Expert*innen
+                  </Typography>
+                )}
+
                 <div className={classes.gridRoot}>
                   <GridList
                     cellHeight={350}
@@ -280,7 +288,7 @@ function App() {
                 </div>
                 <div className={classes.moreButtonArea}>
                   <Button variant="outlined" className={classes.moreButton}>
-                    Zur Klima und Biodiversität Petitionsübersicht
+                    Zur {category.name} Petitionsübersicht
                   </Button>
                 </div>
               </Box>
