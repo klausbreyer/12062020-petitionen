@@ -1,6 +1,8 @@
 import "regenerator-runtime/runtime";
 import "typeface-source-sans-pro";
 
+import { tsv } from "csv";
+
 import React, { useState, useEffect, useMemo } from "react";
 import ReactDOM from "react-dom";
 
@@ -36,6 +38,17 @@ import StarIcon from "@material-ui/icons/Star";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { useWindowSize } from "./lib/useWindowSize";
 import arrayShuffle from "./lib/arrayShuffle";
+
+import expertinnenString from "../import_expertinnen.tsv.js";
+import consulString from "../import_consul.tsv.js";
+function parseTsv(string) {
+  return string.split("\n").map((line) => line.split("\t"));
+}
+
+const expertinnen = parseTsv(expertinnenString);
+console.log(expertinnen);
+const consul = parseTsv(consulString);
+console.log(consul);
 
 const theme = createMuiTheme({
   typography: {
