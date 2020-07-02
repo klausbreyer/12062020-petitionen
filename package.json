@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "parcel public/index.html --port 12620",
-    "build": "rm -rf dist && yarn parcel build public/index.html --public-url ./ && yarn parcel build src/index.js"
+    "build": "rm -rf dist && yarn parcel build public/index.html --public-url https://klausbreyer.github.io/12062020-petitionen/ && yarn parcel build src/index.js --public-url https://klausbreyer.github.io/12062020-petitionen/ "
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
