@@ -147,6 +147,7 @@ const useStyles = makeStyles((theme) => ({
   expertinnenIcon: {
     position: "absolute",
     top: 10,
+    zIndex: 100,
     right: 10,
     width: 40,
     height: 40,
@@ -259,12 +260,12 @@ function App() {
                             (window.location.href = `https://petitionen.12062020.de/budgets/1/investments/${item[0]}`)
                           }
                         >
-                          <img src={image} />
                           <img
                             src={expertinnenIcon}
                             className={classes.expertinnenIcon}
                           />
 
+                          <img src={image} />
                           <GridListTileBar
                             classes={{
                               title: classes.gridListTileBar,
