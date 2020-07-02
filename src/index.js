@@ -87,6 +87,25 @@ const useStyles = makeStyles((theme) => ({
   gridTile: {
     cursor: "pointer",
   },
+  klima: {
+    // backgroundColor: "#bfcd47",
+    // margin: 0,
+  },
+  gridImageConsul: {
+    position: "static",
+    transform: "none",
+  },
+  consulTileBar: {
+    color: "black",
+    fontWeight: "bold",
+    display: "block",
+    padding: 3,
+    fontSize: 18,
+    height: 86,
+    whiteSpace: "normal",
+    background: "none",
+    margin: 0,
+  },
   gridListTileBar: {
     backgroundColor: "#fefefe",
     color: "black",
@@ -113,6 +132,12 @@ const useStyles = makeStyles((theme) => ({
     margin: 7.5,
     padding: 3,
   },
+
+  moreButtonArea: {
+    textAlign: "right",
+    margin: 7.5,
+  },
+  moreButton: { fontWeight: "bold" },
 }));
 
 import expertinnenString from "../data/import_expertinnen.tsv.js";
@@ -122,7 +147,9 @@ function parseTsv(string) {
 }
 
 const petitionImages = require("../images/petitions/*.jpg");
-console.log(petitionImages);
+const categoryImages = require("../images/petitions/*.svg");
+
+console.log(categoryImages);
 
 const expertinnenParsed = parseTsv(expertinnenString);
 console.log(expertinnenParsed);
@@ -131,11 +158,11 @@ console.log(consulParsed);
 
 const expertinnenIds = expertinnenParsed.map((line) => line[0]);
 console.log(expertinnenIds);
-const consulWithoutExpertinnen = consulParsed.filter(
+const consulWithoutExpertinnenParsed = consulParsed.filter(
   (line) => expertinnenIds.indexOf(line[0]) === -1
 );
 
-console.log(consulWithoutExpertinnen);
+console.log(consulWithoutExpertinnenParsed);
 
 function App() {
   const size = useWindowSize();
@@ -151,6 +178,11 @@ function App() {
             const expertinnen = expertinnenParsed.filter(
               (line) => line[1] === category.name
             );
+            const consuls = arrayShuffle(
+              consulWithoutExpertinnenParsed.filter(
+                (line) => line[1] === category.name
+              )
+            ).splice(0, 8);
             console.log(expertinnen);
 
             return (
@@ -210,6 +242,47 @@ function App() {
                 <Typography variant="h6" className={classes.consulHeader}>
                   Noch Mehr Petitionen
                 </Typography>
+                <div className={classes.gridRoot}>
+                  <GridList
+                    cellHeight={100}
+                    className={classes.gridList}
+                    cols={Math.floor(Math.min(size.width, 1280) / 300)}
+                    spacing={15}
+                  >
+                    {consuls.map((item, i) => {
+                      const image = petitionImages[item[0]];
+                      return (
+                        <GridListTile
+                          key={i}
+                          classes={{
+                            imgFullWidth: classes.gridImageConsul,
+                            imgFullHeight: classes.gridImageConsul,
+                          }}
+                          className={classes.gridTile}
+                          onClick={() =>
+                            (window.location.href = `https://petitionen.12062020.de/budgets/1/investments/${item[0]}`)
+                          }
+                        >
+                          <img src={categoryImages[category.short]} />
+
+                          <GridListTileBar
+                            classes={{
+                              title: classes.consulTileBar,
+                              titleWrap: classes.consulTileBar,
+                            }}
+                            className={classes.consulTileBar}
+                            title={item[5]}
+                          />
+                        </GridListTile>
+                      );
+                    })}
+                  </GridList>
+                </div>
+                <div className={classes.moreButtonArea}>
+                  <Button variant="outlined" className={classes.moreButton}>
+                    Zur Klima und Biodiversität Petitionsübersicht
+                  </Button>
+                </div>
               </Box>
             );
           })}
