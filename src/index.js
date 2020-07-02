@@ -34,6 +34,10 @@ import {
   makeStyles,
 } from "@material-ui/core/styles";
 
+const expertinnenIcon = require("../images/expertinnen.png");
+const petitionImages = require("../images/petitions/*.jpg");
+const categoryImages = require("../images/petitions/*.svg");
+
 import StarIcon from "@material-ui/icons/Star";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { useWindowSize } from "./lib/useWindowSize";
@@ -124,7 +128,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 7.5,
     padding: 3,
     paddingLeft: 40,
-    backgroundImage: `url(${require("../images/expertinnen.png")})`,
+    backgroundImage: `url(${expertinnenIcon})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
   },
@@ -140,6 +144,15 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "8em",
   },
   moreButton: { fontWeight: "bold" },
+  expertinnenIcon: {
+    position: "absolute",
+    top: 10,
+    right: 10,
+    width: 40,
+    height: 40,
+    left: "inherit",
+    transform: "none",
+  },
 }));
 
 import expertinnenString from "../data/import_expertinnen.tsv.js";
@@ -147,11 +160,6 @@ import consulString from "../data/import_consul.tsv.js";
 function parseTsv(string) {
   return string.split("\n").map((line) => line.split("\t"));
 }
-
-const petitionImages = require("../images/petitions/*.jpg");
-const categoryImages = require("../images/petitions/*.svg");
-
-console.log(categoryImages);
 
 const expertinnenParsed = parseTsv(expertinnenString);
 console.log(expertinnenParsed);
@@ -233,6 +241,10 @@ function App() {
                           }
                         >
                           <img src={image} />
+                          <img
+                            src={expertinnenIcon}
+                            className={classes.expertinnenIcon}
+                          />
 
                           <GridListTileBar
                             classes={{
