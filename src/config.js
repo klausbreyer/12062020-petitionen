@@ -34,7 +34,7 @@ export default {
     },
     {
       image: require("../images/header/andere.svg"),
-      name: "Wildcards",
+      name: "Andere",
       filter: "Andere",
       short: "andere",
       color: "#F2910F",

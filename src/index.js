@@ -2,11 +2,9 @@ import "regenerator-runtime/runtime";
 import "typeface-source-sans-pro";
 
 import React from "react";
-// import React, { useState, useEffect, useMemo } from "react";
 import ReactDOM from "react-dom";
 
 import config from "./config";
-// import Carousel from "react-material-ui-carousel";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
@@ -106,6 +104,9 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: "normal",
     margin: 0,
   },
+  blue: {
+    color: "#0088FF",
+  },
   icon: {
     color: "rgba(255, 255, 255, 0.54)",
   },
@@ -160,6 +161,8 @@ const expertinnenIds = expertinnenParsed.map((line) => line[0]);
 const consulWithoutExpertinnenParsed = arrayShuffle(
   consulParsed.filter((line) => expertinnenIds.indexOf(line[0]) === -1)
 );
+
+console.log(expertinnenParsed);
 
 function App() {
   const size = useWindowSize();
@@ -249,7 +252,12 @@ function App() {
                               titleWrap: classes.gridListTileBar,
                             }}
                             className={classes.gridListTileBar}
-                            title={item[5]}
+                            title={
+                              <>
+                                <span className={classes.blue}>{item[10]}</span>
+                                <span> - {item[5]}</span>
+                              </>
+                            }
                           />
                         </GridListTile>
                       );
