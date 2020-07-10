@@ -131,6 +131,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "8em",
   },
   moreButton: { fontWeight: "bold" },
+  theImage: { maxWidth: "inherit" },
   expertinnenIcon: {
     position: "absolute",
     top: 10,
@@ -250,7 +251,11 @@ function App() {
                             className={classes.expertinnenIcon}
                           />
 
-                          <img src={image} title={item[7]} />
+                          <img
+                            src={image}
+                            title={item[7]}
+                            className={classes.theImage}
+                          />
                           <GridListTileBar
                             classes={{
                               title: classes.gridListTileBar,
