@@ -265,7 +265,7 @@ function App() {
                   </GridList>
                 </div>
                 <Typography variant="h6" className={classes.consulHeader}>
-                  Noch Mehr Petitionen
+                  Die Petitionen
                 </Typography>
                 <div className={classes.gridRoot}>
                   <GridList
@@ -283,12 +283,16 @@ function App() {
                             imgFullWidth: classes.gridImageConsul,
                             imgFullHeight: classes.gridImageConsul,
                           }}
+                          title={item[5]}
                           className={classes.gridTile}
                           onClick={() =>
                             (window.location.href = `https://petitionen.12062020.de/budgets/1/investments/${item[0]}`)
                           }
                         >
-                          <img src={categoryImages[category.short]} />
+                          <img
+                            title={item[5]}
+                            src={categoryImages[category.short]}
+                          />
 
                           <GridListTileBar
                             classes={{
@@ -304,103 +308,20 @@ function App() {
                   </GridList>
                 </div>
                 <div className={classes.moreButtonArea}>
-                  <Button variant="outlined" className={classes.moreButton}>
+                  <Button
+                    variant="outlined"
+                    className={classes.moreButton}
+                    href={category.link}
+                  >
                     Zur {category.name} Petitionsübersicht
                   </Button>
                 </div>
               </Box>
             );
           })}
-
-          {/* <Carousel
-            autoPlay={true}
-            indicators={true}
-            animation={"fade"}
-            navButtonsAlwaysVisible={true}
-            fullHeightHover={true}
-            next={(next, active) => {
-            }}
-            prev={(prev, active) => {
-            }}
-          >
-            {items
-              .filter((item) => item.expert === true)
-              .map((item, i) => (
-                <GridList
-                  key={i}
-                  cellHeight={360}
-                  className={classes.gridList}
-                  cols={1}
-                >
-                  <GridListTile
-                    className={classes.gridTile}
-                    onClick={() => (window.location.href = item.url)}
-                  >
-                    <img src={item.image} alt={item.title} />
-                    <GridListTileBar
-                      title={item.name}
-                      subtitle={<span>{item.description}</span>}
-                      actionIcon={
-                        item.expert === false ? null : (
-                          <Tooltip
-                            className={classes.icon}
-                            title="Von Expertinnen empfohlen."
-                          >
-                            <StarIcon />
-                          </Tooltip>
-                        )
-                      }
-                    />
-                  </GridListTile>
-                </GridList>
-              ))}
-          </Carousel>
-
-          <div className={classes.gridRoot}>
-            <GridList
-              cellHeight={180}
-              lassName={classes.gridList}
-              cols={Math.floor(size.width / 320)}
-            >
-              {items.map((item, i) => (
-                <GridListTile
-                  key={i}
-                  className={classes.gridTile}
-                  onClick={() => (window.location.href = item.url)}
-                >
-                  <img src={item.image} alt={item.title} />
-                  <GridListTileBar
-                    title={item.name}
-                    subtitle={<span>{item.description}</span>}
-                    actionIcon={
-                      item.expert === false ? null : (
-                        <Tooltip
-                          className={classes.icon}
-                          title="Von Expertinnen empfohlen."
-                        >
-                          <StarIcon />
-                        </Tooltip>
-                      )
-                    }
-                  />
-                </GridListTile>
-              ))}
-            </GridList>
-          </div>*/}
         </Box>
       </ThemeProvider>
     </>
   );
 }
 ReactDOM.render(<App />, document.getElementById("root"));
-
-// function Item(props) {
-//   return (
-//     <Paper>
-//       <h2>{props.item.name}</h2>
-//       <p>{props.item.description}</p>
-
-//       <Button className="CheckButton">Check it out!</Button>
-//     </Paper>
-//   );
-// }
