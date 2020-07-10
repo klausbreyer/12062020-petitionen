@@ -23,7 +23,7 @@ const expertinnenIcon = require("../images/expertinnen.png");
 const petitionImages = require("../images/petitions/*.jpg");
 const categoryImages = require("../images/petitions/*.svg");
 
-import CssBaseline from "@material-ui/core/CssBaseline";
+// import CssBaseline from "@material-ui/core/CssBaseline";
 import { useWindowSize } from "./lib/useWindowSize";
 import arrayShuffle from "./lib/arrayShuffle";
 
@@ -170,7 +170,7 @@ function App() {
 
   return (
     <>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <ThemeProvider theme={theme}>
         <Box color="text.primary" className={classes.root}>
           {config.categories.map((category) => {
