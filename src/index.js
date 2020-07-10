@@ -211,14 +211,19 @@ function App() {
                 {category.short === "andere" && (
                   <div className={classes.andereExplanation}>
                     <Typography variant="h4">
-                      Warum gibt es die Wildcards?
+                      Alles, was nicht in die Fokusthemen passt, aber genauso
+                      wichtig ist
                     </Typography>
                     <Typography>
-                      Das ist ein Erklärunghstext warum es die Kategorie
-                      Wildcards gibt und warum diese Petitionen nicht von den
-                      Expert’innen empfohlen wurden. Gruende warum es die
-                      Kategorie Wildcards gibt und warum diese Petitionen nicht
-                      von den Expert’innen empfohlen wurden.
+                      In der Kategorie “Andere” haben alle Petitionsvorschläge
+                      Platz gefunden, die nicht eindeutig einer der anderen
+                      Kategorien zugeordnet werden können. Aufgrund der daraus
+                      entstandenen Themenvielfalt gibt es hier keinen
+                      Expert*innenrat und damit keine empfohlenen Vorschläge.
+                      <br />
+                      Daher seid Ihr jetzt umso mehr gefragt, für die Kategorie
+                      die vielversprechendsten Petitionen mit der größten
+                      Schlagkraft auszuwählen!
                     </Typography>
                   </div>
                 )}
@@ -313,7 +318,7 @@ function App() {
                     className={classes.moreButton}
                     href={category.link}
                   >
-                    Zur {category.name} Petitionsübersicht
+                    Zur Petitionsübersicht &raquo;{category.name}&laquo;
                   </Button>
                 </div>
               </Box>
