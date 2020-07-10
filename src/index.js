@@ -99,6 +99,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#fefefe",
     color: "black",
     fontWeight: "bold",
+    fontSize: "0.8rem",
     display: "block",
     padding: 0,
     whiteSpace: "normal",
