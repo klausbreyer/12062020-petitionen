@@ -386,7 +386,7 @@ module.exports="https://klausbreyer.github.io/12062020-petitionen/185.aa344beb.j
 },{}],"WrhL":[function(require,module,exports) {
 module.exports="https://klausbreyer.github.io/12062020-petitionen/240.0dd7a6ac.jpg";
 },{}],"fk37":[function(require,module,exports) {
-module.exports="https://klausbreyer.github.io/12062020-petitionen/267.ba9dbf09.jpg";
+module.exports="https://klausbreyer.github.io/12062020-petitionen/267.2d93da1d.jpg";
 },{}],"cnN6":[function(require,module,exports) {
 module.exports="https://klausbreyer.github.io/12062020-petitionen/27.2c24dbf9.jpg";
 },{}],"rLv0":[function(require,module,exports) {
@@ -419,17 +419,17 @@ module.exports={27:require("./27.jpg"),28:require("./28.jpg"),71:require("./71.j
 module.exports="https://klausbreyer.github.io/12062020-petitionen/andere.066d7b1e.svg";
 },{}],"g9sS":[function(require,module,exports) {
 module.exports="https://klausbreyer.github.io/12062020-petitionen/consulbar.228ab899.svg";
-},{}],"bloe":[function(require,module,exports) {
-module.exports="https://klausbreyer.github.io/12062020-petitionen/demo.e28208ae.svg";
 },{}],"BdM9":[function(require,module,exports) {
 module.exports="https://klausbreyer.github.io/12062020-petitionen/corona.d394496c.svg";
+},{}],"bloe":[function(require,module,exports) {
+module.exports="https://klausbreyer.github.io/12062020-petitionen/demo.e28208ae.svg";
 },{}],"OnDp":[function(require,module,exports) {
 module.exports="https://klausbreyer.github.io/12062020-petitionen/klima.37852da8.svg";
 },{}],"ngus":[function(require,module,exports) {
 module.exports="https://klausbreyer.github.io/12062020-petitionen/sozial.0386463f.svg";
 },{}],"GqY5":[function(require,module,exports) {
-module.exports={andere:require("./andere.svg"),consulbar:require("./consulbar.svg"),demo:require("./demo.svg"),corona:require("./corona.svg"),klima:require("./klima.svg"),sozial:require("./sozial.svg")};
-},{"./andere.svg":"htPf","./consulbar.svg":"g9sS","./demo.svg":"bloe","./corona.svg":"BdM9","./klima.svg":"OnDp","./sozial.svg":"ngus"}],"h8TT":[function(require,module,exports) {
+module.exports={andere:require("./andere.svg"),consulbar:require("./consulbar.svg"),corona:require("./corona.svg"),demo:require("./demo.svg"),klima:require("./klima.svg"),sozial:require("./sozial.svg")};
+},{"./andere.svg":"htPf","./consulbar.svg":"g9sS","./corona.svg":"BdM9","./demo.svg":"bloe","./klima.svg":"OnDp","./sozial.svg":"ngus"}],"h8TT":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.useWindowSize=a;var t=require("react");function e(t,e){return u(t)||i(t,e)||n(t,e)||r()}function r(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function n(t,e){if(t){if("string"==typeof t)return o(t,e);var r=Object.prototype.toString.call(t).slice(8,-1);return"Object"===r&&t.constructor&&(r=t.constructor.name),"Map"===r||"Set"===r?Array.from(t):"Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r)?o(t,e):void 0}}function o(t,e){(null==e||e>t.length)&&(e=t.length);for(var r=0,n=new Array(e);r<e;r++)n[r]=t[r];return n}function i(t,e){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(t)){var r=[],n=!0,o=!1,i=void 0;try{for(var u,f=t[Symbol.iterator]();!(n=(u=f.next()).done)&&(r.push(u.value),!e||r.length!==e);n=!0);}catch(a){o=!0,i=a}finally{try{n||null==f.return||f.return()}finally{if(o)throw i}}return r}}function u(t){if(Array.isArray(t))return t}function f(t){return(f="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function a(){var r="object"===("undefined"==typeof window?"undefined":f(window));function n(){return{width:r?window.innerWidth:void 0,height:r?window.innerHeight:void 0}}var o=e((0,t.useState)(n),2),i=o[0],u=o[1];return(0,t.useEffect)(function(){if(!r)return!1;function t(){u(n())}return window.addEventListener("resize",t),function(){return window.removeEventListener("resize",t)}},[]),i}
 },{"react":"n8MK"}],"CF0B":[function(require,module,exports) {
 "use strict";function e(e){for(var t,r,o=e.length;0!==o;)r=Math.floor(Math.random()*o),t=e[o-=1],e[o]=e[r],e[r]=t;return e}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
