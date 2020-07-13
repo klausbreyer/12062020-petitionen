@@ -150,6 +150,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+import removedString from "../data/import_removed.tsv.js";
 import expertinnenString from "../data/import_expertinnen.tsv.js";
 import consulString from "../data/import_consul.tsv.js";
 function parseTsv(string) {
@@ -157,14 +158,23 @@ function parseTsv(string) {
 }
 
 const expertinnenParsed = parseTsv(expertinnenString);
+const removedParsed = parseTsv(removedString);
 const consulParsed = parseTsv(consulString);
 
+const removedIds = removedParsed.map((line) => line[0]);
 const expertinnenIds = expertinnenParsed.map((line) => line[0]);
 const consulWithoutExpertinnenParsed = arrayShuffle(
-  consulParsed.filter((line) => expertinnenIds.indexOf(line[0]) === -1)
+  consulParsed.filter(
+    (line) =>
+      expertinnenIds.indexOf(line[0]) === -1 &&
+      removedIds.indexOf(line[0]) === -1
+  )
 );
 
-console.log(expertinnenParsed);
+console.log(consulParsed);
+console.log(removedIds);
+console.log(expertinnenIds);
+console.log(consulWithoutExpertinnenParsed);
 
 function App() {
   const size = useWindowSize();
